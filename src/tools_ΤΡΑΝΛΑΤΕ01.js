@@ -106,7 +106,7 @@ window.tools = [{
 		}
 
 		undoable({
-			name: "Ελεύθερη Επιλογή",
+			name: "Ελεύθερη Επιλογή",//Free-Form Select
 			icon: get_icon_for_tool(get_tool_by_name("Free-Form Select")),
 			soft: true,
 		}, ()=> {
@@ -136,7 +136,7 @@ window.tools = [{
 	},
 	$options: $choose_transparent_mode
 }, {
-	name: "Επιλογή",//"Select",
+	name: "Επιλογή",// "Select",
 	speech_recognition: [
 		"select", "rectangle select", "rectangular select", "box select", "square select", "drag select", "select rectangle", "select by rectangle", "select rectangular region", "select rectangular area", "rectangular region select", "rectangular area select",
 		"selection", "rectangle selection", "rectangular selection", "box selection", "square selection", "rectangular region selection", "rectangular area selection",
@@ -404,7 +404,7 @@ window.tools = [{
 		}
 	}
 }, {
-	name:  "Διάλεξε χρώμα",//"Pick Color",
+	name: "Διάλεξε χρώμα",//"Pick Color",
 	speech_recognition: [
 		"pick color", "select color", "color select", "color selector", "color picker", "pick a color", "color picking", "color choosing", "color selecting", "color chooser", "color lift", "color lifter", "color lifting", "lift color",
 		"eyedropper", "eye dropper", "eye-dropper", "pipette", "Pasteur pipette", "dropper", "eye drop", "eye-drop", "eyedrop", "suck up color", "absorb color",
@@ -458,7 +458,7 @@ window.tools = [{
 	},
 	$options: $(E("div"))
 }, {
-	name: "Μεγεθυντικός φακός", //"Magnifier",
+	name: "Μεγενθυτικός φακός", //"Magnifier",
 	speech_recognition: [
 		"magnifier", "magnifying glass", "loupe", "hand lens", "hand glass", "eyeglass", "eye glass", "lens", "simple microscope", "microscope", "glass", "spyglass", "telescope",
 		"magnification", "zoom", "zoom in", "zoom out", "zoomer", "magnifying", "zooming", "enlarging tool",
@@ -581,7 +581,7 @@ window.tools = [{
 	},
 	$options: $choose_magnification
 }, {
-	name: "Μολύβι",//name: "Pencil",
+	name: "Μολύβι",//"Pencil",
 	speech_recognition: [
 		"pencil", "lead", "graphite", "pen", "pixel", "pixel art", "penciling", "penning", "pixeling",
 	],
@@ -636,7 +636,7 @@ window.tools = [{
 	},
 	$options: $choose_airbrush_size
 }, {
-	name: "Text",
+	name: "Κείμενο",
 	speech_recognition: [
 		"text", "type", "typography", "write", "writing", "words", "text box", "text-box", "textbox", "word", "lettering", "font", "fonts", "texts",
 	],
@@ -653,7 +653,7 @@ window.tools = [{
 	},
 	$options: $choose_transparent_mode
 }, {
-	name: "Line",
+	name: "γραμμή",
 	speech_recognition: [
 		"line", "line segment", "straight line",
 		"lines", "line segments", "straight lines",
@@ -763,7 +763,7 @@ window.tools = [{
 	},
 	$options: $choose_stroke_size
 }, {
-	name: "Rectangle",
+	name: "Τετράγωνο",// "Rectangle",
 	speech_recognition: [
 		"rectangle", "square", "box", "rect",
 		"sharp rectangle", "sharp square", "sharp box", "sharp rect",
@@ -801,7 +801,7 @@ window.tools = [{
 	},
 	$options: $ChooseShapeStyle()
 }, {
-	name: "Polygon",
+	name: "Πολύγωνο",//"Polygon",
 	speech_recognition: [
 		"polygon", "poly", "shape", "n-gon", "free-form polygon", "freeform polygon", "free form polygon",
 		"triangle", "quadrangle", "pentagon", "hexagon", "heptagon", "octagon", "nonagon", "decagon", "undecagon", "dodecagon",
@@ -966,7 +966,7 @@ window.tools = [{
 	shape_colors: true,
 	$options: $ChooseShapeStyle()
 }, {
-	name: "Ellipse",
+	name: "Έλλειψη",//"Ellipse",
 	speech_recognition: [
 		"ellipse", "circle", "oval", "ovoid", "ovaloid", "oviform", "elliptical", "oblong circle", "stretched circle", "ball", "sphere", "round tool", "rounded tool",
 		"ellipses", "circles", "ovals", "ovoids", "ovaloids", "oviforms", "ellipticals", "oblong circles", "stretched circles", "balls", "spheres",
@@ -995,7 +995,7 @@ window.tools = [{
 	},
 	$options: $ChooseShapeStyle()
 }, {
-	name: "Rounded Rectangle",
+	name: "Στρογκ. Τετράγωνο",//"Rounded Rectangle",
 	speech_recognition: [
 		"rounded rectangle", "rounded square", "rounded box",
 		"round rectangle", "round square", "round box",

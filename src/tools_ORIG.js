@@ -5,7 +5,7 @@
 /* eslint-disable no-restricted-syntax */
 
 window.tools = [{
-	name: "Ελεύθερη Επιλογή",//"Free-Form Select",
+	name: "Free-Form Select",
 	speech_recognition: [
 		"lasso", "select with lasso", "select by lassoing", "lassoing",
 		"lasso select", "freeform select", "free-form select", "free form select", "polygonal select", "polygon select", "shape select", "outline select", "select by outline", "select by outlining", "star select", "shape select", "select by shape", "select by drawing a shape", "select by drawing shape",
@@ -106,7 +106,7 @@ window.tools = [{
 		}
 
 		undoable({
-			name: "Ελεύθερη Επιλογή",
+			name: "Free-Form Select",
 			icon: get_icon_for_tool(get_tool_by_name("Free-Form Select")),
 			soft: true,
 		}, ()=> {
@@ -136,7 +136,7 @@ window.tools = [{
 	},
 	$options: $choose_transparent_mode
 }, {
-	name: "Επιλογή",//"Select",
+	name: "Select",
 	speech_recognition: [
 		"select", "rectangle select", "rectangular select", "box select", "square select", "drag select", "select rectangle", "select by rectangle", "select rectangular region", "select rectangular area", "rectangular region select", "rectangular area select",
 		"selection", "rectangle selection", "rectangular selection", "box selection", "square selection", "rectangular region selection", "rectangular area selection",
@@ -229,7 +229,7 @@ window.tools = [{
 	},
 	$options: $choose_transparent_mode
 }, {
-	name: "Σβήστρα/Διαγραφή Χρώματος", //"Eraser/Color Eraser",
+	name: "Eraser/Color Eraser",
 	speech_recognition: [
 		"erase", "eraser", "rubber", "wiper", "clearer", "mark remover", "obliterator", "expunger",
 		"color eraser", "color replacer", "replace color", "replace colors",
@@ -374,7 +374,7 @@ window.tools = [{
 	},
 	$options: $choose_eraser_size
 }, {
-	name: "Γέμισε με χρώμα",//"Fill With Color",
+	name: "Fill With Color",
 	speech_recognition: [
 		"fill with color", "flood fill", "fill", "flood filling", "flood-filling", "floodfilling", "floodfill",
 		"fill area with color", "flood fill area", "fill area", "color area", "area fill", "area filling", "filling area",
@@ -404,7 +404,7 @@ window.tools = [{
 		}
 	}
 }, {
-	name:  "Διάλεξε χρώμα",//"Pick Color",
+	name: "Pick Color",
 	speech_recognition: [
 		"pick color", "select color", "color select", "color selector", "color picker", "pick a color", "color picking", "color choosing", "color selecting", "color chooser", "color lift", "color lifter", "color lifting", "lift color",
 		"eyedropper", "eye dropper", "eye-dropper", "pipette", "Pasteur pipette", "dropper", "eye drop", "eye-drop", "eyedrop", "suck up color", "absorb color",
@@ -458,7 +458,7 @@ window.tools = [{
 	},
 	$options: $(E("div"))
 }, {
-	name: "Μεγεθυντικός φακός", //"Magnifier",
+	name: "Magnifier",
 	speech_recognition: [
 		"magnifier", "magnifying glass", "loupe", "hand lens", "hand glass", "eyeglass", "eye glass", "lens", "simple microscope", "microscope", "glass", "spyglass", "telescope",
 		"magnification", "zoom", "zoom in", "zoom out", "zoomer", "magnifying", "zooming", "enlarging tool",
@@ -581,7 +581,7 @@ window.tools = [{
 	},
 	$options: $choose_magnification
 }, {
-	name: "Μολύβι",//name: "Pencil",
+	name: "Pencil",
 	speech_recognition: [
 		"pencil", "lead", "graphite", "pen", "pixel", "pixel art", "penciling", "penning", "pixeling",
 	],
@@ -593,7 +593,7 @@ window.tools = [{
 		return {size: pencil_size, shape: "circle"};
 	}
 }, {
-	name: "Βούρτσα",
+	name: "Brush",
 	speech_recognition: [
 		"brush", "paint brush", "paintbrush",
 		// "paint", // could also be the paint bucket tool; might be too general, matching saying "MS Paint" / "JS Paint"
@@ -611,7 +611,7 @@ window.tools = [{
 	},
 	$options: $choose_brush
 }, {
-	name: "Σπρεύ",//"Airbrush",
+	name: "Airbrush",
 	speech_recognition: [
 		"air brush", "airbrush", "aerograph", "airbrushing", "air brushing",
 		"spray paint", "spraypaint", "paint spray", "spray painting", "spraypainting",
