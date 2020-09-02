@@ -5,9 +5,9 @@ const looksLikeChrome = !!(window.chrome && (chrome.loadTimes || chrome.csi));
 // (also this browser detection logic could likely use some more nuance)
 
 window.menus = {
-	"Αρχείο": [//"&File": [
+	"&File": [
 		{
-			item: "&Νέο",
+			item: "&New",
 			shortcut: "Ctrl+Alt+N", // Ctrl+N opens a new browser window
 			speech_recognition: [
 				"new", "new file", "new document", "create new document", "create a new document", "start new document", "start a new document",
@@ -16,7 +16,7 @@ window.menus = {
 			description: "Creates a new document.",
 		},
 		{
-			item: "&Ανοιγμα",
+			item: "&Open",
 			shortcut: "Ctrl+O",
 			speech_recognition: [
 				"open", "open document", "open file", "open an image file", "open a document", "open a file",
@@ -28,7 +28,7 @@ window.menus = {
 			description: "Opens an existing document.",
 		},
 		{
-			item: "&Σώσε",
+			item: "&Save",
 			shortcut: "Ctrl+S",
 			speech_recognition: [
 				"save", "save document", "save file", "save image", "save picture", "save image file",
@@ -39,7 +39,7 @@ window.menus = {
 			description: "Saves the active document.",
 		},
 		{
-			item: "Σώσε &Ως",
+			item: "Save &As",
 			shortcut: "Ctrl+Shift+S",
 			speech_recognition: [
 				// this is ridiculous
@@ -59,7 +59,7 @@ window.menus = {
 		},
 		MENU_DIVIDER,
 		{
-			item: "&Φορτωσε από URL",
+			item: "&Load From URL",
 			// shortcut: "Ctrl+L",
 			speech_recognition: [
 				"load from url",
@@ -99,7 +99,7 @@ window.menus = {
 			description: "Opens an image from the web.",
 		},
 		{
-			item: "&Upload Στο Imgur",
+			item: "&Upload To Imgur",
 			speech_recognition: [
 				"upload to imgur", "upload image to imgur", "upload picture to imgur",
 			],
@@ -117,16 +117,16 @@ window.menus = {
 		},
 		MENU_DIVIDER,
 		{
-			item: "Διαχ. Αποθηκευμένων",
+			item: "Manage Storage",
 			speech_recognition: [
 				"manage storage", "show storage", "open storage window", "manage sessions", "show sessions", "storage manager", "show storage manager", "open storage manager",
 			],
 			action: ()=> { manage_storage(); },
-			description: "Διαχείρίζεται τον αποθηκευτικό χώρο προηγούμενων εικόνων.",
+			description: "Manages storage of previously created or opened pictures.",
 		},
 		MENU_DIVIDER,
 		{
-			item: "Προεπισκόπιση Εκτύπωσης",
+			item: "Print Pre&view",
 			speech_recognition: [
 				"preview print", "print preview", "show print preview", "show preview of print",
 			],
@@ -137,7 +137,7 @@ window.menus = {
 			//description: "Displays full pages.",
 		},
 		{
-			item: "Ρυθμίσεις Σελίδας",//Page Se&tup
+			item: "Page Se&tup",
 			speech_recognition: [
 				"setup page for print", "setup page for printing", "set-up page for print", "set-up page for printing", "set up page for print", "set up page for printing",
 				"page setup", "printing setup", "page set-up", "printing set-up", "page set up", "printing set up",
@@ -149,7 +149,7 @@ window.menus = {
 			//description: "Changes the page layout.",
 		},
 		{
-			item: "&Εκτύπωση",
+			item: "&Print",
 			shortcut: "Ctrl+P",
 			speech_recognition: [
 				"print", "send to printer", "show print dialog",
@@ -195,13 +195,13 @@ window.menus = {
 		},
 		MENU_DIVIDER,
 		{
-			item: "Πρόσφατο αρχείο",
+			item: "Recent File",
 			enabled: false, // @TODO for desktop app
 			description: "",
 		},
 		MENU_DIVIDER,
 		{
-			item: "Έ&ξοδος", //E&xit
+			item: "E&xit",
 			// shortcut: "Alt+F4", // closes browser window
 			speech_recognition: [
 				"exit application", "exit paint", "close paint window",
@@ -212,9 +212,9 @@ window.menus = {
 			description: "Quits Paint.",
 		}
 	],
-	"Επεξεργασία": [//"&Edit": [
+	"&Edit": [
 		{
-			item: "&Αναίρεση", //"&Undo",
+			item: "&Undo",
 			shortcut: "Ctrl+Z",
 			speech_recognition: [
 				"undo", "undo that",
@@ -224,7 +224,7 @@ window.menus = {
 			description: "Undoes the last action.",
 		},
 		{
-			item: "&Επαναλ.",//"&Repeat",
+			item: "&Repeat",
 			shortcut: "F4",
 			speech_recognition: [
 				"repeat", "redo",
@@ -234,7 +234,7 @@ window.menus = {
 			description: "Redoes the previously undone action.",
 		},
 		{
-			item: "&Ιστορία",//"&History",
+			item: "&History",
 			shortcut: "Ctrl+Shift+Y",
 			speech_recognition: [
 				"show history", "history",
@@ -244,7 +244,7 @@ window.menus = {
 		},
 		MENU_DIVIDER,
 		{
-			item: "Αποκοπή",//Cu&t
+			item: "Cu&t",
 			shortcut: "Ctrl+X",
 			speech_recognition: [
 				"cut", "cut selection", "cut selection to clipboard", "cut the selection", "cut the selection to clipboard", "cut the selection to the clipboard",
@@ -258,7 +258,7 @@ window.menus = {
 			description: "Cuts the selection and puts it on the Clipboard.",
 		},
 		{
-			item: "Αντιγραφή", //"&Copy",
+			item: "&Copy",
 			shortcut: "Ctrl+C",
 			speech_recognition: [
 				"copy", "copy selection", "copy selection to clipboard", "copy the selection", "copy the selection to clipboard", "copy the selection to the clipboard",
@@ -272,7 +272,7 @@ window.menus = {
 			description: "Copies the selection and puts it on the Clipboard.",
 		},
 		{
-			item: "Επικόλληση",//"&Paste",
+			item: "&Paste",
 			shortcut: "Ctrl+V",
 			speech_recognition: [
 				"paste", "paste from clipboard", "paste from the clipboard", "insert clipboard", "insert clipboard contents", "insert the contents of the clipboard", "paste what's on the clipboard",
@@ -286,7 +286,7 @@ window.menus = {
 			description: "Inserts the contents of the Clipboard.",
 		},
 		{
-			item: "Καθάρισε Επιλογή",//"C&lear Selection",
+			item: "C&lear Selection",
 			shortcut: "Del",
 			speech_recognition: [
 				"delete", "clear selection", "delete selection", "delete selected", "delete selected area", "clear selected area", "erase selected", "erase selected area",
@@ -296,7 +296,7 @@ window.menus = {
 			description: "Deletes the selection.",
 		},
 		{
-			item: "Επιλογή όλων",// "Select &All",
+			item: "Select &All",
 			shortcut: "Ctrl+A",
 			speech_recognition: [
 				"select all", "select everything",
@@ -308,7 +308,7 @@ window.menus = {
 		},
 		MENU_DIVIDER,
 		{
-			item: "Αντιγραφλη Σε...",//"C&opy To...",
+			item: "C&opy To...",
 			speech_recognition: [
 				"copy to file", "copy selection to file", "copy selection to a file", "save selection", 
 				"save selection as file", "save selection as image", "save selection as picture", "save selection as image file", "save selection as document",
@@ -321,7 +321,7 @@ window.menus = {
 			description: "Copies the selection to a file.",
 		},
 		{
-			item: "Επικόλληση από...",//"Paste &From...",
+			item: "Paste &From...",
 			speech_recognition: [
 				"paste a file", "paste from a file", "insert a file", "insert an image file", 
 			],
@@ -331,7 +331,7 @@ window.menus = {
 	],
 	"&View": [
 		{
-			item: "Εργαλειοθήκη",//"&Tool Box",
+			item: "&Tool Box",
 			// shortcut: "Ctrl+T", // opens a new browser tab
 			speech_recognition: [
 				"toggle tool box", "toggle tools box", "toggle toolbox", "toggle tool palette", "toggle tools palette",
@@ -346,7 +346,7 @@ window.menus = {
 			description: "Shows or hides the tool box.",
 		},
 		{
-			item: "Χρώματα", //"&Color Box",
+			item: "&Color Box",
 			// shortcut: "Ctrl+L", // focuses browser address bar
 			speech_recognition: [
 				"toggle color box", "toggle colors box", "toggle palette", "toggle color palette", "toggle colors palette",
@@ -361,7 +361,7 @@ window.menus = {
 			description: "Shows or hides the color box.",
 		},
 		{
-			item: "Μπάρα κατάστασης",//"&Status Bar",
+			item: "&Status Bar",
 			speech_recognition: [
 				"toggle status bar", "toggle status text", "toggle status area", "toggle status indicator",
 				// @TODO: hide/show
@@ -375,7 +375,7 @@ window.menus = {
 			description: "Shows or hides the status bar.",
 		},
 		{
-			item: "Εργαλειοθήκη κειμένου",//T&ext Toolbar",
+			item: "T&ext Toolbar",
 			speech_recognition: [
 				"toggle text toolbar", "toggle font toolbar", "toggle text tool bar", "toggle font tool bar",
 				"toggle font box", "toggle fonts box", "toggle text options box", "toggle text tool options box", "toggle font options box",
@@ -388,7 +388,7 @@ window.menus = {
 		},
 		MENU_DIVIDER,
 		{
-			item: "&Zoυμ",//"&Zoom",
+			item: "&Zoom",
 			submenu: [
 				{
 					item: "&Normal Size",
@@ -466,7 +466,7 @@ window.menus = {
 				},
 				MENU_DIVIDER,
 				{
-					item: "Δείξε πλέγμα",//"Show &Grid",
+					item: "Show &Grid",
 					shortcut: "Ctrl+G",
 					speech_recognition: [
 						"toggle show grid",
@@ -481,7 +481,7 @@ window.menus = {
 					description: "Shows or hides the grid.",
 				},
 				{
-					item: "Δείξε εικονίδιο",//"Show T&humbnail",
+					item: "Show T&humbnail",
 					speech_recognition: [
 						"toggle show thumbnail",
 						"toggle thumbnail", "toggle thumbnail view", "toggle thumbnail box", "toggle thumbnail window",
@@ -509,10 +509,10 @@ window.menus = {
 			description: "Displays the entire picture.",
 		}
 	],
-	"Εικόνα": [//"&Image": [
+	"&Image": [
 		// @TODO: speech recognition: terms that apply to selection
 		{
-			item: "&Στροφή/Περιστροφή",//"&Flip/Rotate",
+			item: "&Flip/Rotate",
 			// shortcut: "Ctrl+R", // reloads browser tab
 			speech_recognition: [
 				"flip",
@@ -524,7 +524,7 @@ window.menus = {
 			description: "Flips or rotates the picture or a selection.",
 		},
 		{
-			item: "Τέντωσε/Skew",//"&Stretch/Skew",
+			item: "&Stretch/Skew",
 			// shortcut: "Ctrl+W", // closes browser tab
 			speech_recognition: [
 				"stretch", "scale", "resize image",
@@ -536,7 +536,7 @@ window.menus = {
 			description: "Stretches or skews the picture or a selection.",
 		},
 		{
-			item: "Αντιστροφή Χρωμάτων",//"&Invert Colors",
+			item: "&Invert Colors",
 			shortcut: "Ctrl+I",
 			speech_recognition: [
 				"invert",
@@ -549,7 +549,7 @@ window.menus = {
 			description: "Inverts the colors of the picture or a selection.",
 		},
 		{
-			item: "&Attributes...",//"&Attributes...",
+			item: "&Attributes...",
 			shortcut: "Ctrl+E",
 			speech_recognition: [
 				"attributes", "image attributes", "picture attributes", "image options", "picture options",
@@ -563,7 +563,7 @@ window.menus = {
 			description: "Changes the attributes of the picture.",
 		},
 		{
-			item: "Καθάρισε Εικόνα",//"&Clear Image",
+			item: "&Clear Image",
 			shortcut: looksLikeChrome ? undefined : "Ctrl+Shift+N", // opens incognito window in chrome
 			speech_recognition: [
 				"clear image", "clear canvas", "clear picture", "clear page", "clear drawing",
@@ -583,7 +583,7 @@ window.menus = {
 			// mspaint says "Clears the picture or selection.", but grays out the option when there's a selection
 		},
 		{
-			item: "Ζωγράφισε Opaque",//"&Draw Opaque",
+			item: "&Draw Opaque",
 			speech_recognition: [
 				"toggle draw opaque",
 				"toggle transparent selection", "toggle transparent selections",
@@ -603,7 +603,7 @@ window.menus = {
 			description: "Makes the current selection either opaque or transparent.",
 		}
 	],
-	"Χρώματα": [//"&Colors": [
+	"&Colors": [
 		{
 			item: "&Edit Colors...",
 			speech_recognition: [
@@ -650,7 +650,7 @@ window.menus = {
 			description: "Saves the current palette of colors to a file.",
 		}
 	],
-	"Βοήθεια": [//"&Help": [
+	"&Help": [
 		{
 			item: "&Help Topics",
 			speech_recognition: [
@@ -674,9 +674,9 @@ window.menus = {
 			//description: "Displays program information, version number, and copyright.",
 		}
 	],
-	"Έξτρα": [ //"E&xtras": [
+	"E&xtras": [
 		{
-			item: "Ιστορία",//"&History",
+			item: "&History",
 			shortcut: "Ctrl+Shift+Y",
 			speech_recognition: [
 				// This is a duplicate menu item (for easy access), so it doesn't need speech recognition data here.
@@ -685,7 +685,7 @@ window.menus = {
 			description: "Shows the document history and lets you navigate to states not accessible with Undo or Repeat.",
 		},
 		{
-			item: "Ιστορία &Render ως GIF",//"&Render History As GIF",
+			item: "&Render History As GIF",
 			shortcut: "Ctrl+Shift+G",
 			speech_recognition: [
 				// @TODO: animated gif, blah
@@ -845,7 +845,7 @@ window.menus = {
 			]
 		},
 		{
-			item: "Θέματα",//"&Themes",
+			item: "&Themes",
 			submenu: [
 				{
 					item: "&Classic",
@@ -877,7 +877,7 @@ window.menus = {
 					description: "Makes JS Paint look like MS Paint from Windows 98.",
 				},
 				{
-					item: "Σκοτεινό",//"&Dark",
+					item: "&Dark",
 					speech_recognition: [
 						"dark theme", "switch to dark theme", "use dark theme", "set theme to dark", "set theme dark", "switch to dark theme", "switch theme to dark", "switch theme dark",
 						"dark mode", "switch to dark mode", "use dark mode", "set mode to dark", "set mode dark", "switch to dark mode", "switch mode to dark", "switch mode dark",
@@ -894,7 +894,7 @@ window.menus = {
 					description: "Makes JS Paint darker.",
 				},
 				{
-					item: "Μοντέρνο",
+					item: "&Modern",
 					speech_recognition: [
 						"modern theme", "switch to modern theme", "use modern theme", "set theme to modern", "set theme modern", "switch to modern theme", "switch theme to modern", "switch theme modern",
 					],
@@ -905,7 +905,7 @@ window.menus = {
 					description: "Makes JS Paint look a bit more modern.",
 				},
 				{
-					item: "Χειμώνας",
+					item: "&Winter",
 					speech_recognition: [
 						"winter theme", "switch to winter theme", "use winter theme", "set theme to winter", "set theme winter", "switch to winter theme", "switch theme to winter", "switch theme winter",
 						"holiday theme", "switch to holiday theme", "use holiday theme", "set theme to holiday", "set theme holiday", "switch to holiday theme", "switch theme to holiday", "switch theme holiday",
@@ -993,7 +993,7 @@ window.menus = {
 			description: "Enlarges buttons and provides dwell clicking.",
 		},
 		{
-			item: "Αναγνώριση Φωνής",//"&Speech Recognition",
+			item: "&Speech Recognition",
 			speech_recognition: [
 				"toggle speech recognition", "toggle speech recognition mode",
 				"disable speech recognition", "disable speech recognition mode", "turn off speech recognition", "turn off speech recognition mode", "leave speech recognition mode", "exit speech recognition mode",
