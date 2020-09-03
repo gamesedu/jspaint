@@ -1,3 +1,5 @@
+# Changes/Modifications :
+* 200902 - index_gr.html (greek translation -original is index_en.html)
 
 # [![](images/icons/32x32.png) JS Paint](https://jspaint.app)
 
