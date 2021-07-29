@@ -862,7 +862,7 @@ function are_you_sure(action, canceled){
 }
 
 function show_error_message(message, error){
-	const $w = $FormToolWindow().title(localize("Paint")).addClass("dialogue-window");
+	const $w = $FormToolWindow().title(localize("Paint")).addClass("dialogue-window squish");
 	$w.$main.text(message);
 	$w.$main.css("max-width", "600px");
 	if(error){
@@ -948,6 +948,7 @@ function show_about_paint(){
 		$about_paint_window.close();
 	}
 	$about_paint_window = $ToolWindow().title(localize("About Paint"));
+	$about_paint_window.addClass("about-paint squish");
 	if (is_pride_month) {
 		$("#paint-32x32").attr("src", "./images/icons/gay-es-paint-32x32-light-outline.png");
 	}
@@ -1050,6 +1051,8 @@ function show_news(){
 		$news_window.close();
 	}
 	$news_window = $ToolWindow().title("Project News");
+	$news_window.addClass("news-window squish");
+
 
 	// const $latest_entries = $latest_news.find(".news-entry");
 	// const latest_entry = $latest_entries[$latest_entries.length - 1];
@@ -1468,6 +1471,7 @@ function get_history_ancestors(node) {
 }
 
 let $document_history_window;
+// setTimeout(show_document_history, 100);
 function show_document_history() {
 	if ($document_history_prompt_window) {
 		$document_history_prompt_window.close();
@@ -1476,7 +1480,9 @@ function show_document_history() {
 		$document_history_window.close();
 	}
 	const $w = $document_history_window = new $ToolWindow();
+	// $w.prependTo("body").css({position: ""});
 	$w.title("Document History");
+	$w.addClass("history-window squish");
 	$w.$content.html(`
 		<div class="history-view"></div>
 	`);
@@ -1500,8 +1506,16 @@ function show_document_history() {
 		if (node === current_history_node) {
 			$entry.addClass("current");
 			requestAnimationFrame(()=> {
-				$history_view.scrollTop(previous_scroll_position);
-				$entry[0].scrollIntoView({block: "nearest"});
+				// scrollIntoView causes <html> to scroll when the window is partially offscreen,
+				// despite overflow: hidden on html and body, so it's not an option.
+				$history_view[0].scrollTop =
+					Math.min(
+						$entry[0].offsetTop,
+						Math.max(
+							previous_scroll_position,
+							$entry[0].offsetTop - $history_view[0].clientHeight + $entry.outerHeight()
+						)
+					);
 			});
 		} else {
 			const history_ancestors = get_history_ancestors(current_history_node);
@@ -2447,9 +2461,13 @@ function choose_file_name_and_type(dialog_name, file_name, types, callback) {
 		$w.close();
 	});
 
-	$file_name.focus().select();
-
 	$w.center();
+	// For mobile devices with on-screen keyboards, move the window to the top
+	if (window.innerWidth < 500 || window.innerHeight < 700) {
+		$w.css({ top: 20 });
+	}
+
+	$file_name.focus().select();
 }
 
 // @TODO: establish a better pattern for this (platform-specific functions, with browser-generic fallbacks)

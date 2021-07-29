@@ -701,7 +701,7 @@
 				current_language = language;
 			}
 			function set_language(language) {
-				const $w = $FormToolWindow().title("Reload Required").addClass("dialogue-window");
+				const $w = $FormToolWindow().title("Reload Required").addClass("dialogue-window squish");
 				$w.$main.text("The application needs to reload to change the language.");
 				$w.$main.css("max-width", "600px");
 				$w.$Button(localize("OK"), () => {
@@ -736,6 +736,7 @@
 		<script src="lib/os-gui/$MenuBar.js"></script>
 		<script src="lib/imagetracer_v1.2.5.js"></script>
 
+		<script src="src/functions.js"></script>
 		<script src="src/helpers.js"></script>
 		<script src="src/storage.js"></script>
 		<script src="src/$Component.js"></script>
@@ -754,7 +755,6 @@
 		<!-- ERROR when translating 2check again <script src="src/tools_gr.js"></script>-->
 		<!--<script src="src/extra-tools.js"></script>-->
 		<script src="src/edit-colors.js"></script>
-		<script src="src/functions.js"></script>
 		<script src="src/manage-storage.js"></script>
 		<script src="src/imgur.js"></script>
 		<script src="src/help.js"></script>
